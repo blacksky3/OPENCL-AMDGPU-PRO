@@ -84,7 +84,7 @@ package_lib32-opencl-legacy-amdgpu-pro(){
   license=(custom: AMDGPU-PRO EULA)
   depends=(opencl-legacy-amdgpu-pro)
   conflicts=(opencl-amd)
-	provides=(lib32-opencl-driver)
+  provides=(lib32-opencl-driver)
 
   extract_deb "${srcdir}"/opencl-legacy-amdgpu-pro-icd_${major}-${minor}~${ubuntu_ver}_i386.deb
   move_libdir "opt/amdgpu-pro/lib/i386-linux-gnu" "usr/lib32"
