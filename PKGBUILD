@@ -82,7 +82,7 @@ package_opencl-legacy-amdgpu-pro(){
 package_lib32-opencl-legacy-amdgpu-pro(){
   pkgdesc='Legacy non-free AMD OpenCL ICD Loaders (PAL) (32-bit)'
   license=(custom: AMDGPU-PRO EULA)
-  depends=(opencl-legacy-amdgpu-pro)
+  depends=(opencl-legacy-amdgpu-pro=${major}_${minor}-${pkgrel})
   conflicts=(opencl-amd)
   provides=(lib32-opencl-driver)
 
