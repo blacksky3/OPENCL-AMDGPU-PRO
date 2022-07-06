@@ -22,7 +22,6 @@ pkgrel=1
 arch=(x86_64)
 url='https://repo.radeon.com/amdgpu'
 license=(custom: multiple)
-groups=(opencl-legacy-amdgpu-pro)
 makedepends=(wget)
 source=(https://repo.radeon.com/amdgpu/${major}/ubuntu/pool/proprietary/o/opencl-legacy-amdgpu-pro/opencl-legacy-amdgpu-pro-icd_${major}-${minor}~${ubuntu_ver}_amd64.deb
         https://repo.radeon.com/amdgpu/${major}/ubuntu/pool/proprietary/o/opencl-legacy-amdgpu-pro/opencl-legacy-amdgpu-pro-icd_${major}-${minor}~${ubuntu_ver}_i386.deb)
