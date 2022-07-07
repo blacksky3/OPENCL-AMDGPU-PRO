@@ -15,8 +15,8 @@ major=22.20
 minor=1438747
 ubuntu_ver=22.04
 
-pkgbase=opencl-legacy-amdgpu-pro
-pkgname=(opencl-legacy-amdgpu-pro lib32-opencl-legacy-amdgpu-pro)
+pkgbase=opencl-amdgpu-pro
+pkgname=(opencl-amdgpu-pro lib32-opencl-amdgpu-pro)
 pkgver=${major}_${minor}
 pkgrel=1
 arch=(x86_64)
@@ -61,10 +61,10 @@ move_copyright(){
   find ${pkgdir}/usr/share/doc -type d -empty -delete
 }
 
-package_opencl-legacy-amdgpu-pro(){
+package_opencl-amdgpu-pro(){
   pkgdesc='Legacy non-free AMD OpenCL ICD Loaders (PAL)'
   license=(custom: AMDGPU-PRO EULA)
-  conflicts=(opencl-amd)
+  conflicts=(opencl-amd opencl-amdgpu-pro-21.20)
   provides=(opencl-driver)
   optdepends=(clinfo rocm-opencl-runtime)
 
@@ -78,11 +78,11 @@ package_opencl-legacy-amdgpu-pro(){
   ln -s /usr/lib/libamdocl-orca64.so ${pkgdir}/usr/lib/libamdocl-orca.so
 }
 
-package_lib32-opencl-legacy-amdgpu-pro(){
+package_lib32-opencl-amdgpu-pro(){
   pkgdesc='Legacy non-free AMD OpenCL ICD Loaders (PAL) (32-bit)'
   license=(custom: AMDGPU-PRO EULA)
   depends=(opencl-legacy-amdgpu-pro=${major}_${minor}-${pkgrel})
-  conflicts=(opencl-amd)
+  conflicts=(opencl-amd lib32-opencl-amdgpu-pro-21.20)
   provides=(lib32-opencl-driver)
 
   extract_deb "${srcdir}"/opencl-legacy-amdgpu-pro-icd_${major}-${minor}~${ubuntu_ver}_i386.deb
