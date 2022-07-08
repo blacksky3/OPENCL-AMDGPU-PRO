@@ -63,6 +63,7 @@ move_copyright(){
 
 package_opencl-amdgpu-pro(){
   pkgdesc='Non-free AMD OpenCL ICD Loaders (PAL)'
+  arch=(x86_64)
   license=(custom: AMDGPU-PRO EULA)
   conflicts=(opencl-amd opencl-amdgpu-pro-21.20)
   provides=(opencl-driver)
@@ -80,6 +81,7 @@ package_opencl-amdgpu-pro(){
 
 package_lib32-opencl-amdgpu-pro(){
   pkgdesc='Non-free AMD OpenCL ICD Loaders (PAL) (32-bit)'
+  arch=(i686 x86_64)
   license=(custom: AMDGPU-PRO EULA)
   depends=(opencl-amdgpu-pro=${major}_${minor}-${pkgrel})
   conflicts=(opencl-amd lib32-opencl-amdgpu-pro-21.20)
